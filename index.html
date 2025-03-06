@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="codemirror/codemirror_file/lib/codemirror.css">
     <title>Document</title>
 </head>
 <body class="docBody">
@@ -12,7 +13,23 @@
         <button class="toggle">
         </button>
     </nav>
-    <div class="sidebar"></div>
+    <div class="bodyElements">
+        <div class="sidebar"></div>
+        <div class="codeEditor">
+            <div class="texthtml">
+                <label for="textHTML">HTML</label>
+                <textarea name="HTML" class="textHTML">
+
+                </textarea>
+            </div>
+            <div class="textcss"></div>
+            <div class="textjs"></div>
+            <div class="preview">   
+            </div>
+        </div>
+    </div>
+    <script src="jquery/jquery-3.7.1.min.js"></script>
+    <script src="codemirror/codemirror_file/lib/codemirror.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

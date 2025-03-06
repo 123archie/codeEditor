@@ -3,6 +3,14 @@ let body=document.querySelector("body");
 let btn=document.querySelector(".btn");
 let sidebar=document.querySelector(".sidebar");
 let nav=document.querySelector(".navbar");
+let texthtml=document.querySelector(".textHTML");
+let editor=CodeMirror.fromTextArea(texthtml, {
+    mode: "xml", 
+    lineNumbers: true,
+    theme: "default",
+    value: "<h1>Hello</h1>"
+}
+);
 toggle.addEventListener("click", ()=>{
     if(window.getComputedStyle(document.body).backgroundColor==="rgb(255, 255, 255)"){
         toggle.classList.add("toggle-dark");
