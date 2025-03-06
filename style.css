@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: white;
+    background-color: rgba(239, 239, 239, 0.404);
+    overflow-x: hidden;
+    overflow-y: hidden;
 }.bodyElements{
     display:flex;
 }
@@ -62,6 +64,8 @@
     gap: 10px;
     margin-left: 17%;
     margin-top: 80px;
+    margin-bottom:10px;
+    margin-right: 10px;
     height: 100%;
     width: 100%;
 }.texthtml{

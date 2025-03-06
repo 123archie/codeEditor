@@ -12,7 +12,7 @@ let editor=CodeMirror.fromTextArea(texthtml, {
 }
 );
 toggle.addEventListener("click", ()=>{
-    if(window.getComputedStyle(document.body).backgroundColor==="rgb(255, 255, 255)"){
+    if(window.getComputedStyle(document.body).backgroundColor==="rgba(239, 239, 239, 0.404)"){
         toggle.classList.add("toggle-dark");
         btn.classList.add("btn-dark");
         body.classList.add("docBody-dark");
