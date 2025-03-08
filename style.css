@@ -72,11 +72,9 @@
     height: 100%;
     width: 100%;
 } .textcss{
-    border: solid black;
     height: 100%;
     width:100%;
 }.textjs{
-    border: solid pink;
     height: 100%;
     width:100%;
 }.preview{
@@ -97,5 +95,17 @@
     padding: 6px;
     font-family: cursive;
 }.previewLabel-dark{
+    color: white;
+}.labelCss{
+    font-size: larger;
+    padding: 6px;
+    font-family: cursive;
+}.labelCss-dark{
+    color: white;
+}.labelJs{
+    font-size: larger;
+    padding: 6px;
+    font-family: cursive;
+}.labelJs-dark{
     color: white;
 }

@@ -7,12 +7,26 @@ let texthtml=document.querySelector(".textHTML");
 let labelHtml=document.querySelector(".labelHtml");
 let iframe=document.querySelector(".previewFrame").contentWindow.document;
 let previewLabel=document.querySelector(".previewLabel");
+let textcss=document.querySelector(".textCSS");
+let textjs=document.querySelector(".textJS");
+let labelCss=document.querySelector(".labelCss");
+let labelJs=document.querySelector(".labelJs");
 let editor=CodeMirror.fromTextArea(texthtml, {
     mode: "htmlmixed", 
     lineNumbers: true,
     theme: "default", 
-}
-);
+});
+let editorCSS=CodeMirror.fromTextArea(textcss, {
+    mode: "css",
+    lineNumbers: true,
+    theme: "default",
+    autoCloseBrackets: true
+});
+let editorJS=CodeMirror.fromTextArea(textjs, {
+    mode:"js", 
+    lineNumbers: true,
+    theme: "default",
+});
 toggle.addEventListener("click", ()=>{
     if(window.getComputedStyle(document.body).backgroundColor==="rgba(239, 239, 239, 0.404)"){
         toggle.classList.add("toggle-dark");
@@ -22,6 +36,8 @@ toggle.addEventListener("click", ()=>{
         sidebar.classList.add("sidebar-dark");
         labelHtml.classList.add("labelHtml-dark");
         previewLabel.classList.add("previewLabel-dark");
+        labelCss.classList.add("labelCss-dark");
+        labelJs.classList.add("labelJs-dark");
     }else{
         toggle.classList.remove("toggle-dark");
         btn.classList.remove("btn-dark");
@@ -30,11 +46,15 @@ toggle.addEventListener("click", ()=>{
         sidebar.classList.remove("sidebar-dark");
         labelHtml.classList.remove("labelHtml-dark");
         previewLabel.classList.remove("previewLabel-dark");
+        labelCss.classList.remove("labelCss-dark");
+        labelJs.classList.remove("labelJs-dark");
     }
 })
 btn.addEventListener("click", ()=>{
     let value=editor.getValue();
+    let cssvalue=`<style>${editorCSS.getValue()}</style>`;
+    let jsvalue=`<script>${editorJS.getValue()}</script>`;
     iframe.open();
-    iframe.write(value);
+    iframe.write(value+cssvalue+jsvalue);
     iframe.close();
 })
