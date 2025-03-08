@@ -5,7 +5,7 @@ let sidebar=document.querySelector(".sidebar");
 let nav=document.querySelector(".navbar");
 let texthtml=document.querySelector(".textHTML");
 let labelHtml=document.querySelector(".labelHtml");
-let iframe=document.querySelector(".previewFrame");
+let iframe=document.querySelector(".previewFrame").contentWindow.document;
 let previewLabel=document.querySelector(".previewLabel");
 let editor=CodeMirror.fromTextArea(texthtml, {
     mode: "htmlmixed", 
@@ -31,4 +31,10 @@ toggle.addEventListener("click", ()=>{
         labelHtml.classList.remove("labelHtml-dark");
         previewLabel.classList.remove("previewLabel-dark");
     }
+})
+btn.addEventListener("click", ()=>{
+    let value=editor.getValue();
+    iframe.open();
+    iframe.write(value);
+    iframe.close();
 })
