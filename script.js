@@ -4,11 +4,13 @@ let btn=document.querySelector(".btn");
 let sidebar=document.querySelector(".sidebar");
 let nav=document.querySelector(".navbar");
 let texthtml=document.querySelector(".textHTML");
+let labelHtml=document.querySelector(".labelHtml");
+let iframe=document.querySelector(".previewFrame");
+let previewLabel=document.querySelector(".previewLabel");
 let editor=CodeMirror.fromTextArea(texthtml, {
-    mode: "xml", 
+    mode: "htmlmixed", 
     lineNumbers: true,
-    theme: "default",
-    value: "<h1>Hello</h1>"
+    theme: "default", 
 }
 );
 toggle.addEventListener("click", ()=>{
@@ -18,11 +20,15 @@ toggle.addEventListener("click", ()=>{
         body.classList.add("docBody-dark");
         nav.classList.add("navbar-dark");
         sidebar.classList.add("sidebar-dark");
+        labelHtml.classList.add("labelHtml-dark");
+        previewLabel.classList.add("previewLabel-dark");
     }else{
         toggle.classList.remove("toggle-dark");
         btn.classList.remove("btn-dark");
         body.classList.remove("docBody-dark");
         nav.classList.remove("navbar-dark");
         sidebar.classList.remove("sidebar-dark");
+        labelHtml.classList.remove("labelHtml-dark");
+        previewLabel.classList.remove("previewLabel-dark");
     }
 })
