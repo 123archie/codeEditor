@@ -28,7 +28,7 @@ let editorJS=CodeMirror.fromTextArea(textjs, {
     theme: "default",
 });
 toggle.addEventListener("click", ()=>{
-    if(window.getComputedStyle(document.body).backgroundColor==="rgba(239, 239, 239, 0.404)"){
+    if(window.getComputedStyle(document.body).backgroundColor==="rgba(255, 255, 255, 0.404)"){
         toggle.classList.add("toggle-dark");
         btn.classList.add("btn-dark");
         body.classList.add("docBody-dark");
