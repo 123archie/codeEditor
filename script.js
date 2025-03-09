@@ -14,7 +14,7 @@ let labelJs=document.querySelector(".labelJs");
 let editor=CodeMirror.fromTextArea(texthtml, {
     mode: "htmlmixed", 
     lineNumbers: true,
-    theme: "default", 
+    theme: "default",
 });
 let editorCSS=CodeMirror.fromTextArea(textcss, {
     mode: "css",
@@ -23,7 +23,7 @@ let editorCSS=CodeMirror.fromTextArea(textcss, {
     autoCloseBrackets: true
 });
 let editorJS=CodeMirror.fromTextArea(textjs, {
-    mode:"js", 
+    mode:"javascript", 
     lineNumbers: true,
     theme: "default",
 });
@@ -38,6 +38,9 @@ toggle.addEventListener("click", ()=>{
         previewLabel.classList.add("previewLabel-dark");
         labelCss.classList.add("labelCss-dark");
         labelJs.classList.add("labelJs-dark");
+        editor.setOption("theme", "dracula");
+        editorCSS.setOption("theme", "dracula");
+        editorJS.setOption("theme", "dracula");
     }else{
         toggle.classList.remove("toggle-dark");
         btn.classList.remove("btn-dark");
@@ -48,6 +51,9 @@ toggle.addEventListener("click", ()=>{
         previewLabel.classList.remove("previewLabel-dark");
         labelCss.classList.remove("labelCss-dark");
         labelJs.classList.remove("labelJs-dark");
+        editor.setOption("theme", "default");
+        editorCSS.setOption("theme", "default");
+        editorJS.setOption("theme", "default");
     }
 })
 btn.addEventListener("click", ()=>{
