@@ -21,7 +21,7 @@ let editor=CodeMirror.fromTextArea(texthtml, {
     theme: "default",
     extraKeys: {"Ctrl-/": "toggleComment"}
     });
-
+editor.setValue("<!-- Write your html code here -->")
 let editorCSS=CodeMirror.fromTextArea(textcss, {
     mode: "css",
     lineNumbers: true,
@@ -29,12 +29,14 @@ let editorCSS=CodeMirror.fromTextArea(textcss, {
     autoCloseBrackets: true,
     extraKeys: {"Ctrl-/":"toggleComment"}
 });
+editorCSS.setValue("/* Write your css code here */")
 let editorJS=CodeMirror.fromTextArea(textjs, {
     mode:"javascript", 
     lineNumbers: true,
     theme: "default",
     extraKeys: {"Ctrl-/":"toggleComment"}
 });
+editorJS.setValue("// Write your js code here")
 toggle.addEventListener("click", ()=>{
     if(window.getComputedStyle(document.body).backgroundColor==="rgba(255, 255, 255, 0.404)"){
         toggle.classList.add("toggle-dark");
