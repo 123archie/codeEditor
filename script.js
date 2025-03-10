@@ -11,6 +11,10 @@ let textcss=document.querySelector(".textCSS");
 let textjs=document.querySelector(".textJS");
 let labelCss=document.querySelector(".labelCss");
 let labelJs=document.querySelector(".labelJs");
+let textHtml=document.querySelector(".texthtml");
+let textCss=document.querySelector(".textcss");
+let textJs=document.querySelector(".textjs");
+let preview=document.querySelector(".preview");
 let editor=CodeMirror.fromTextArea(texthtml, {
     mode: "htmlmixed", 
     lineNumbers: true,
@@ -45,6 +49,10 @@ toggle.addEventListener("click", ()=>{
         editor.setOption("theme", "dracula");
         editorCSS.setOption("theme", "dracula");
         editorJS.setOption("theme", "dracula");
+        textHtml.classList.add("texthtml-dark");
+        textCss.classList.add("textcss-dark");
+        textJs.classList.add("textjs-dark");
+        preview.classList.add("preview-dark");
     }else{
         toggle.classList.remove("toggle-dark");
         btn.classList.remove("btn-dark");
@@ -58,6 +66,10 @@ toggle.addEventListener("click", ()=>{
         editor.setOption("theme", "default");
         editorCSS.setOption("theme", "default");
         editorJS.setOption("theme", "default");
+        textHtml.classList.remove("texthtml-dark");
+        textCss.classList.remove("textcss-dark");
+        textJs.classList.remove("textjs-dark");
+        preview.classList.remove("preview-dark");
     }
 })
 btn.addEventListener("click", ()=>{
