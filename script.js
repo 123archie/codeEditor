@@ -15,17 +15,21 @@ let editor=CodeMirror.fromTextArea(texthtml, {
     mode: "htmlmixed", 
     lineNumbers: true,
     theme: "default",
-});
+    extraKeys: {"Ctrl-/": "toggleComment"}
+    });
+
 let editorCSS=CodeMirror.fromTextArea(textcss, {
     mode: "css",
     lineNumbers: true,
     theme: "default",
-    autoCloseBrackets: true
+    autoCloseBrackets: true,
+    extraKeys: {"Ctrl-/":"toggleComment"}
 });
 let editorJS=CodeMirror.fromTextArea(textjs, {
     mode:"javascript", 
     lineNumbers: true,
     theme: "default",
+    extraKeys: {"Ctrl-/":"toggleComment"}
 });
 toggle.addEventListener("click", ()=>{
     if(window.getComputedStyle(document.body).backgroundColor==="rgba(255, 255, 255, 0.404)"){
