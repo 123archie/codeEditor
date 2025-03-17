@@ -78,6 +78,7 @@ btn.addEventListener("click", ()=>{
     let value=editor.getValue();
     let cssvalue=`<style>${editorCSS.getValue()}</style>`;
     let jsvalue=`<script>${editorJS.getValue()}</script>`;
+    console.log("JavaScript executed successfully");
     iframe.open();
     iframe.write(value+cssvalue+jsvalue);
     iframe.close();
